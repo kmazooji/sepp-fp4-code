@@ -1,13 +1,18 @@
 This repository contains the code for adaptiveMSA, a modified version of UPP that uses J-score instead of bitscore, along with a multi-armed bandit adaptive approach for assigning query sequences to HMMs.
 The repository for the original UPP code is here: https://github.com/smirarab/sepp
 
-In order to install adaptiveMSA, follow the instructions for installing UPP in the file tutorial/upp-tutorial.md, with the exception that  
+## Installation
+
+In order to install adaptiveMSA, follow the instructions for installing UPP in the file tutorial/upp-tutorial.md with the following modifications.  
+First,
 
 `git clone https://github.com/smirarab/sepp.git`
 
 should be replaced with:
 
 `git clone https://github.com/ilanshom/adaptiveMSA.git` 
+
+The installation commands therefore need to be typed in the "adaptiveMSA" folder instead of the "sepp" folder.
 
 Also, after installing this modified version of UPP, move to the adaptiveMSA folder, and type the following command in order to set permissions for executable files.  This resolves a bug in the original UPP installation process on some machines.
 
