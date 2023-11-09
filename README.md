@@ -18,7 +18,7 @@ A default run for this modified version of UPP is called using the same command 
 The optional arguments we have added to UPP are described when the following command is typed into the terminal:
 `run_upp.py -h`
 
-We calso describe them here:
+We also describe them here:
 
 ### kmer size
 argument: `--kmersize k`
@@ -32,15 +32,26 @@ This determines how many kmers in each round of the adaptive algorithm to sample
 argument: `--top_sets_to_check T`
 This determines how many of the top scoring HMMs for a query sequence to compute the J-score on after the adaptive estimation rounds are complete.  The HMM from this set with the best J-score computed from these top sets will be assigned to the query sequence.
 
-### argument `--sample_rounds r`
-This determines the umber of rounds of sampling in the adaptive estimation stage of the algorithm.
+### sample rounds
+argument: `--sample_rounds r`
+This determines the number of rounds of sampling in the adaptive estimation stage of the algorithm.
 
+### use intersection score
+argument: `--use_intersection_score`
+Adding the flag causes the algorithm to use the intersection score instead of the J-score for choosing the best HMM for a query sequence.  The intersection score is given by the numerator in the formula for the J-score.
 
+### exact computation
+argument: `--exact_computation`
+Adding this flag causes the algorithm to compute the J-score exactly for every query sequence - HMM pair instead of estimating the J-score adaptively.  
 
+### choose K
+argument: `--choose_K`
+Adding this flag causes the algorithm to choose K from based on how many sequences share no kmers with any backbone sequences.
 
+### Ks to check
+argument: `--Ks_to_check C`
+This argument determines the values of K that will be checked when choosing K.  The largest K from the set such that the fraction of query sequences that share no kmers with the backbone sequences is below a threshold.
 
-
-
-
-
-
+### sequences unmatched threshold
+argument: `--seqs_unmatched_thresh t`
+This argument determines the threshold for the fraction of query sequences that share no kmers with backbone sequences.
