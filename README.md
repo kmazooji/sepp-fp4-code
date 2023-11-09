@@ -21,37 +21,37 @@ We can set the arguments for Algorithm 1 in the paper manually.  The arguments a
 We also describe them in more detail here.
 
 ### kmer size
-argument: `--kmersize k`
-This determines the kmer size used by the algorithm for assigning query sequences to HMMs
+argument: `--kmer_size k` \
+This determines the kmer size used by the algorithm for assigning query sequences to HMMs.  In Algorithm 1 in the paper, this is $k$.
 
 ### kmers to check
-argument: `--kmers_to_check B`
-This determines how many kmers in each round of the adaptive algorithm to sample from the query sequence in order to estimate the J-score for each of the candidate HMMs in the current round of the adaptive algorithm.
+argument: `--kmers_to_check B` \
+This determines how many kmers to sample from the query sequence in order to estimate the J-score for each of the candidate HMMs in each round of the adaptive algorithm.  In Algorithm 1 in the paper, this is $B$.
 
 ### top sets to check
-argument: `--top_sets_to_check T`
-This determines how many of the top scoring HMMs for a query sequence to compute the J-score on after the adaptive estimation rounds are complete.  The HMM from this set with the best J-score computed from these top sets will be assigned to the query sequence.
+argument: `--top_sets_to_check T` \
+This determines how many of the top scoring HMMs for a query sequence to compute the J-score on after the adaptive estimation rounds are complete.  The HMM from with the best J-score among these top HMMs will be assigned to the query sequence.  In Algorithm 1 in the paper, this is $T$.
 
 ### sample rounds
-argument: `--sample_rounds R`
-This determines the number of rounds of sampling in the adaptive estimation stage of the algorithm.
+argument: `--sample_rounds R` \
+This determines the number of rounds of sampling in the adaptive estimation stage of the algorithm.  In Algorithm 1 in the paper, this is $R$.
 
 ### use intersection score
-argument: `--use_intersection_score`
+argument: `--use_intersection_score` \
 Adding the flag causes the algorithm to use the intersection score instead of the J-score for choosing the best HMM for a query sequence.  The intersection score is given by the numerator in the formula for the J-score.
 
 ### exact computation
-argument: `--exact_computation`
-Adding this flag causes the algorithm to compute the J-score exactly for every query sequence - HMM pair instead of estimating the J-score adaptively.  
+argument: `--exact_computation` \
+Adding this flag causes the algorithm to compute the J-score exactly for every HMM for every query sequence instead of estimating the J-score adaptively.  
 
 ### choose K
-argument: `--choose_K`
-Adding this flag causes the algorithm to choose K from based on how many sequences share no kmers with any backbone sequences.
+argument: `--choose_K` \
+Adding this flag causes the algorithm to choose K based on how many query sequences share no kmers with any backbone sequences.
 
 ### Ks to check
-argument: `--Ks_to_check C`
-This argument determines the values of K that will be checked when choosing K.  The largest K from the set such that the fraction of query sequences that share no kmers with the backbone sequences is below a threshold.
+argument: `--Ks_to_check C` \
+When K is chosen from a set, this argument determines the set of candidate K values that will be checked.  The K chosen is the largest value of K from the set such that the fraction of query sequences that share no kmers with the any backbone sequence is below a threshold.  The values in the set should be seperated by commas without spaces e.g. "5,9" for {5, 9}.
 
 ### sequences unmatched threshold
-argument: `--seqs_unmatched_thresh t`
-This argument determines the threshold for the fraction of query sequences that share no kmers with backbone sequences.
+argument: `--seqs_unmatched_thresh t` \
+When K is chosen from a set, this argument determines the threshold for the fraction of query sequences that share no kmers with any backbone sequences.
