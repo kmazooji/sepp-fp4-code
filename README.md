@@ -1,7 +1,7 @@
-This repository contains the code for adaptiveMSA, a modified version of UPP that uses J-score instead of bitscore, along with a multi-armed bandit adaptive approach for assigning query sequences to HMMs in the UPP algorithm.
+This repository contains the code for adaptiveMSA, a modified version of UPP that uses J-score instead of bitscore, along with a multi-armed bandit adaptive approach for assigning query sequences to HMMs.
 The repository for the original UPP code is here: https://github.com/smirarab/sepp
 
-In order to install adaptiveMSA, follow the instructions for installing UPP in the flie tutorial/upp-tutorial.md, with the exception that  
+In order to install adaptiveMSA, follow the instructions for installing UPP in the file tutorial/upp-tutorial.md, with the exception that  
 
 `git clone https://github.com/smirarab/sepp.git`
 
@@ -15,25 +15,25 @@ A default run for this modified version of UPP is called using the same command 
 
 `run_upp.py -A 10 -B 1000 -M -1 -m molecule_type -s input`
 
-The optional arguments we have added to UPP are described when the following command is typed into the terminal:
+We can set the arguments for Algorithm 1 in the paper manually.  The arguments are described briefly when the following command is typed into the terminal:
 `run_upp.py -h`
 
-We also describe them here:
+We also describe them in more detail here.
 
 ### kmer size
 argument: `--kmersize k`
 This determines the kmer size used by the algorithm for assigning query sequences to HMMs
 
 ### kmers to check
-argument: `--kmers_to_check N`
-This determines how many kmers in each round of the adaptive algorithm to sample from the query sequence in order to estimate the J-score for each of the HMMs for the current round of the adaptive algorithm.
+argument: `--kmers_to_check B`
+This determines how many kmers in each round of the adaptive algorithm to sample from the query sequence in order to estimate the J-score for each of the candidate HMMs in the current round of the adaptive algorithm.
 
 ### top sets to check
 argument: `--top_sets_to_check T`
 This determines how many of the top scoring HMMs for a query sequence to compute the J-score on after the adaptive estimation rounds are complete.  The HMM from this set with the best J-score computed from these top sets will be assigned to the query sequence.
 
 ### sample rounds
-argument: `--sample_rounds r`
+argument: `--sample_rounds R`
 This determines the number of rounds of sampling in the adaptive estimation stage of the algorithm.
 
 ### use intersection score
