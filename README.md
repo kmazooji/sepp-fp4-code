@@ -9,6 +9,10 @@ should be replaced with:
 
 `git clone https://github.com/ilanshom/adaptiveMSA.git` 
 
+Also, after installing this modified version of UPP, move to the adaptiveMSA folder, and type the following command in order to set permissions for executable files.  This resolves a bug in the original UPP installation process on some machines.
+
+`chmod u+x .sepp/bundled-v4.5.2/hmmbuild; chmod u+x .sepp/bundled-v4.5.2/hmmalign; chmod u+x .sepp/bundled-v4.5.2/hmmsearch; chmod u+x .sepp/bundled-v4.5.2/guppy; chmod u+x .sepp/bundled-v4.5.2/pplacer;`
+
 ## Running the code
 
 A default run for this modified version of UPP is called using the same command as UPP:
