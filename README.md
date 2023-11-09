@@ -3,11 +3,11 @@ The repository for the original UPP code is here: https://github.com/smirarab/se
 
 In order to install adaptiveMSA, follow the instructions for installing UPP in the flie tutorial/upp-tutorial.md, with the exception that  
 
-'git clone https://github.com/smirarab/sepp.git'
+`git clone https://github.com/smirarab/sepp.git`
 
 should be replaced with:
 
-'git clone https://github.com/ilanshom/adaptiveMSA.git' 
+`git clone https://github.com/ilanshom/adaptiveMSA.git` 
 
 ## Run Options
 
@@ -15,9 +15,9 @@ A default run for this modified version of UPP is called using the same command 
 
 'run_upp.py -A 10 -B 1000 -M -1 -m molecule_type -s input'
 
-# kmer size
+### kmer size
 
-type --kme
+
 
 
 
